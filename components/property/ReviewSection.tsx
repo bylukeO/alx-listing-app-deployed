@@ -13,10 +13,10 @@ const ReviewSection = ({ propertyId }: { propertyId: string }) => {
   useEffect(() => {
     const fetchReviews = async () => {
       try {
-        const response = await axios.get(
+        const { data } = await axios.get(
           `/api/properties/${propertyId}/reviews`
         );
-        setReviews(response.data);
+        setReviews(data);
       } catch (error) {
         console.error("Error fetching reviews:", error);
       } finally {

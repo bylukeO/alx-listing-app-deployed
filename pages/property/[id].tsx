@@ -13,8 +13,8 @@ export default function PropertyDetailPage() {
     const fetchProperty = async () => {
       if (!id) return;
       try {
-        const response = await axios.get(`/api/properties/${id}`);
-        setProperty(response.data);
+        const { data } = await axios.get(`/api/properties/${id}`);
+        setProperty(data);
       } catch (error) {
         console.error("Error fetching property details:", error);
       } finally {
