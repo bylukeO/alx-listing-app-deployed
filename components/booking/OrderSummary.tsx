@@ -1,6 +1,14 @@
 import Image from "next/image";
 
-const OrderSummary: React.FC<{ bookingDetails: any }> = ({
+interface BookingDetails {
+  propertyName: string;
+  startDate: string;
+  totalNights: number;
+  bookingFee: number;
+  price: number;
+}
+
+const OrderSummary: React.FC<{ bookingDetails: BookingDetails }> = ({
   bookingDetails,
 }) => (
   <div className="bg-white p-6 shadow-md rounded-lg">
